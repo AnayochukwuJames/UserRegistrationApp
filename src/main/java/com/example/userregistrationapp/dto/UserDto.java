@@ -1,22 +1,21 @@
-package com.example.userregistrationapp.model;
+package com.example.userregistrationapp.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Builder
+public class UserDto {
     private Long id;
     private String firstName;
     private String lastName;
-    @Column(nullable = false, unique = true)
     private String email;
     private String phoneNumber;
     private String password;
+
+
 }
