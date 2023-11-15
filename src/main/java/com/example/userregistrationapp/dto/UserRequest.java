@@ -1,6 +1,5 @@
 package com.example.userregistrationapp.dto;
 
-import com.example.userregistrationapp.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
+public class UserRequest {
     private Long id;
     private String firstName;
     private String lastName;

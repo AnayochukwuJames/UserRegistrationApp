@@ -1,13 +1,17 @@
 package com.example.userregistrationapp.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@Builder
 @Entity
 @Table(name = "users")
 public class User {
@@ -16,8 +20,14 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+
     @Column(nullable = false, unique = true)
     private String email;
     private String phoneNumber;
     private String password;
+
+    @CreationTimestamp
+    private Date createdAt;
+    @UpdateTimestamp
+    private Date updatedAt;
 }

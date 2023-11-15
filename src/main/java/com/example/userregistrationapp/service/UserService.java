@@ -1,11 +1,10 @@
 package com.example.userregistrationapp.service;
 
-import com.example.userregistrationapp.dto.UserDto;
+
+import com.example.userregistrationapp.dto.UserRequest;
 import com.example.userregistrationapp.model.User;
+import org.springframework.http.ResponseEntity;
 
 public interface UserService {
-       UserDto createUser(UserDto userDto);
-       UserDto getUser(Long id);
-       UserDto updateUser (Long id, UserDto updatedUserDto);
-      User deleteUser (Long id);
+    ResponseEntity<User> createUser(UserRequest request);
 }
