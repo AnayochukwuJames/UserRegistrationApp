@@ -1,5 +1,6 @@
 package com.example.userregistrationapp.dto;
 
+import com.example.userregistrationapp.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
