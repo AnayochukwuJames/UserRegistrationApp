@@ -12,6 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 @Service
 public class UserServiceImp implements UserService {
@@ -36,5 +39,16 @@ public class UserServiceImp implements UserService {
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("user not found"));
         user = userRepository.save(UserMapper.mapUpdateResponseToUser(user, request));
         return new ResponseEntity<>(UserMapper.mapUserResponse(user), HttpStatus.OK);
+    }
+    @Override
+    public ResponseEntity<String> deleteUser(Long id){
+     userRepository.deleteById (id);
+        return new ResponseEntity <> ("user deleted succefully", HttpStatus.OK);
+    }
+    @Override
+    public ResponseEntity<List<UserResponse>> getAllUser(){
+        List<UserResponse> user = userRepository.findAll().stream().map(UserMapper ::mapUserResponse)
+                .collect(Collectors.toList());
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
