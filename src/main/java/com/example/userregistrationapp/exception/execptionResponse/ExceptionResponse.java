@@ -1,9 +1,6 @@
-package com.example.userregistrationapp.exception;
-
-
+package com.example.userregistrationapp.exception.execptionResponse;
 import lombok.*;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
@@ -11,9 +8,10 @@ import java.util.Date;
 @Builder
 
 public class ExceptionResponse {
+
     private int status;
     private String message;
-    private String path;
     private String error;
-    private Date TimeStamp;
+    private String path;
+    private LocalDateTime TimeStamp;
 }
