@@ -22,8 +22,9 @@ public class UserRequest {
     private String lastName;
     @NotBlank(message = "email must be valid")
     private String email;
-
+    @NotBlank(message = "phone number must be correct")
     private String phoneNumber;
+    @NotBlank(message = "password must be strong")
     private String password;
 
 
