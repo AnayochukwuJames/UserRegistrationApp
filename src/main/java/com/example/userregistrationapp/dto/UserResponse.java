@@ -17,7 +17,10 @@ public class UserResponse {
     @NotBlank(message = "last name must not be blank")
     @Size(min = 3, message = "last name must be minimum of 3 characters")
     private String lastName;
+    @NotBlank(message = "emailAddress must not be empty")
     private String email;
+    @NotBlank(message = "phoneNumber must not be empty")
     private String phoneNumber;
+    @NotBlank(message = "password must be strong")
     private String password;
 }
