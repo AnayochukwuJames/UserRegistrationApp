@@ -43,7 +43,7 @@ public class UserServiceImp implements UserService {
     @Override
     public ResponseEntity<String> deleteUser(Long id){
      userRepository.deleteById (id);
-        return new ResponseEntity <> ("user deleted succefully", HttpStatus.OK);
+        return new ResponseEntity <> ("user deleted successfully", HttpStatus.OK);
     }
     @Override
     public ResponseEntity<List<UserResponse>> getAllUser(){
