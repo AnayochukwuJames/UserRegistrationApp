@@ -19,4 +19,6 @@ public interface UserService {
     ResponseEntity<String> deleteUser(Long id);
 
     ResponseEntity<List<UserResponse>> getAllUser();
+
+
 }

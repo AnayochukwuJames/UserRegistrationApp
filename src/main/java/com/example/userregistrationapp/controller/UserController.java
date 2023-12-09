@@ -32,6 +32,7 @@ public ResponseEntity<UserResponse> updateUser(@PathVariable Long id, @RequestBo
     public ResponseEntity<String> deleteUser(@PathVariable Long id){
         return userService.deleteUser(id);
 }
+
 @GetMapping("get-all-users")
 public ResponseEntity<List<UserResponse>> getAllUser(){
         return userService.getAllUser();
